@@ -1,2 +1,2 @@
-# QUIZ-
-📱 Web App (PWA) de Quiz Bíblico desenvolvido com JavaScript Puro, CSS Moderno e JSON. Instalável, responsivo e com suporte offline.
+📖 Quiz Bíblico (PWA)
+Um jogo de perguntas e respostas interativo desenvolvido para testar conhecimentos sobre o Antigo e Novo Testamento. O projeto foi construído como um Progressive Web App (PWA) , permitindo que seja instalado no celular e funcione como um aplicativo nativo.
