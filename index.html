@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Quiz Bíblico</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4a90e2">
+    
+    <link rel="shortcut icon" href="img/icon.png" type="image/png">
+    <link rel="icon" href="img/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="img/icon.png">
+
+    <meta property="og:title" content="Quiz Bíblico 📖">
+    <meta property="og:description" content="Teste seus conhecimentos sobre o Antigo e Novo Testamento!">
+    <meta property="og:image" content="LINK_COMPLETO_DA_SUA_IMAGEM_AQUI/img/logo.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:type" content="website">
+</head>
+<body>
+
+    <div id="startScreen" class="overlay">
+       <div id="startScreen" class="overlay">
+        <div class="box">
+            <h1>📖 Quiz Bíblico</h1>
+            <p>Escolha seu desafio:</p>
+            
+            <input type="text" id="playerName" placeholder="Digite seu nome" value="Peregrino">
+            
+       <div class="buttons-container">
+    <button class="btn-start old-testament" onclick="initGame('antigo')">
+        <img src="img/justica.png" alt="Ícone Antigo" class="btn-icon-img">
+        <span>Antigo Testamento</span>
+    </button>
+    
+    <button class="btn-start new-testament" onclick="initGame('novo')">
+        <img src="img/biblia.png" alt="Ícone Novo" class="btn-icon-img">
+        <span>Novo Testamento</span>
+    </button>
+</div>
+        </div>
+    </div>
+    </div>
+
+    <div id="gameOverScreen" class="overlay" style="display: none;">
+        <div class="box">
+            <h1 id="endTitle">FIM DA JORNADA!</h1>
+            <div id="finalScore" class="final-score-text"></div>
+            <button class="btn-start" onclick="restartGame()">JOGAR NOVAMENTE</button>
+        </div>
+    </div>
+<div id="roundOverScreen" class="overlay" style="display: none;">
+        <div class="box">
+            <h1>Rodada Completa!</h1>
+            <p id="roundScoreText">Você acertou X de 10</p>
+            
+            <div class="buttons-container">
+                <button class="btn-start" onclick="nextRound()">CONTINUAR ➡️</button>
+                <button class="btn-start" style="background: #e74c3c;" onclick="stopGame()">PARAR 🛑</button>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="player-info">
+            <span id="displayName">Jogador</span>
+        </div>
+        <div class="score-info">
+            Pontos: <span id="score">0</span>
+        </div>
+    </header>
+<audio id="bgMusic" loop>
+        <source src="sound/amazing-grace-instrumental-145357.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="correctSound">
+        <source src="sound/correct-156911.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="wrongSound">
+        <source src="sound/error-08-206492.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="bgMusic" loop><source src="sound/amazing-grace-instrumental-145357.mp3" type="audio/mpeg"></audio>
+    <audio id="correctSound"><source src="sound/correct-156911.mp3" type="audio/mpeg"></audio>
+    <audio id="wrongSound"><source src="sound/error-08-206492.mp3" type="audio/mpeg"></audio>
+
+    <main class="quiz-container" id="quizContainer">
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+
+        <div class="question-box">
+            <h2 id="questionText">Carregando pergunta...</h2>
+        </div>
+
+        <div class="options-grid" id="optionsGrid">
+            </div>
+
+        <p class="question-counter">Pergunta <span id="currentQ">1</span> de <span id="totalQ">10</span></p>
+    </main>
+<script src="script.js"></script>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then(registration => {
+              console.log('App registrado com sucesso: ', registration.scope);
+            })
+            .catch(err => {
+              console.log('Falha ao registrar o App: ', err);
+            });
+        });
+      }
+    </script>
+</body>
+</html>

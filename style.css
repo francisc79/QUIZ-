@@ -1,0 +1,179 @@
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    
+    /* Impede selecionar texto (Sensação de App) */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    /* Remove destaque azul ao clicar no celular */
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    
+    /* Permite rolagem mas esconde a barra */
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    /* Espaço extra em baixo para nada ficar cortado no celular */
+    padding-bottom: 50px;
+}
+
+/* ESCONDER BARRA DE ROLAGEM */
+body::-webkit-scrollbar {
+    display: none;
+}
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+/* --- TELAS DE MENU (OVERLAY) --- */
+.overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 100;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    width: 90%; max-width: 400px;
+}
+
+.box h1 { color: #2c3e50; margin-bottom: 10px; }
+.box input { padding: 10px; width: 100%; margin: 15px 0; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
+
+.btn-start {
+    background: #4a90e2; color: white; border: none;
+    padding: 12px 24px; font-size: 1.1rem; border-radius: 50px;
+    cursor: pointer; width: 100%; transition: transform 0.2s;
+}
+.btn-start:hover { transform: scale(1.05); background: #357abd; }
+
+/* --- JOGO --- */
+header {
+    width: 100%; max-width: 600px;
+    display: flex; justify-content: space-between;
+    padding: 20px; color: white; font-weight: bold; font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.quiz-container {
+    background: white;
+    width: 95%; max-width: 600px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex; flex-direction: column; gap: 20px;
+}
+
+.progress-bar { width: 100%; height: 10px; background: #eee; border-radius: 5px; overflow: hidden; }
+.progress-fill { height: 100%; background: #4a90e2; width: 0%; transition: width 0.5s; }
+
+.question-box h2 { text-align: center; color: #2c3e50; font-size: 1.3rem; min-height: 60px; }
+
+.options-grid { display: flex; flex-direction: column; gap: 10px; }
+
+.option-btn {
+    background: #f8f9fa; border: 2px solid #e9ecef;
+    padding: 15px; border-radius: 10px;
+    text-align: left; font-size: 1rem; cursor: pointer;
+    transition: all 0.2s; color: #444;
+}
+
+.option-btn:hover { background: #e2e6ea; }
+
+/* Feedback de Acerto/Erro */
+.option-btn.correct { background: #d4edda; border-color: #28a745; color: #155724; }
+.option-btn.wrong { background: #f8d7da; border-color: #dc3545; color: #721c24; }
+/* Bloqueia cliques após responder */
+.no-click { pointer-events: none; }
+
+.question-counter { text-align: center; color: #888; font-size: 0.9rem; margin-top: 10px; }
+
+/* Container para os botões ficarem um em cima do outro com espaço */
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Estilo Base do Botão */
+.btn-start {
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.2s, filter 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.btn-start:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* Cores Específicas */
+.old-testament {
+    background: #8e44ad; /* Roxo ou Marrom (#d35400) fica legal */
+    background: linear-gradient(to right, #8e44ad, #9b59b6);
+}
+
+.new-testament {
+    background: #2980b9; /* Azul */
+    background: linear-gradient(to right, #2980b9, #3498db);
+}
+/* 1. Atualize a classe do botão para alinhar os itens */
+.btn-start {
+    /* Habilita o alinhamento flexível */
+    display: flex;
+    align-items: center;       /* Centraliza verticalmente */
+    justify-content: center;   /* Centraliza horizontalmente */
+    gap: 15px;                 /* Espaço entre a imagem e o texto */
+    
+    /* Mantém o estilo anterior que você já tinha */
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s, filter 0.2s;
+}
+
+/* 2. Nova classe para controlar o tamanho das imagens */
+.btn-icon-img {
+    width: 32px;  /* Força a largura para ficar pequena */
+    height: 32px; /* Força a altura para ficar quadrada */
+    object-fit: contain; /* Garante que a imagem não fique esticada ou distorcida */
+    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.3)); /* Uma sombra leve no ícone para destaque */
+}
+
+/* Efeito hover (já deve ter, mas garante que funciona) */
+.btn-start:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
