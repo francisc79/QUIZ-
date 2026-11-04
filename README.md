@@ -1,70 +1,129 @@
-# Quiz Bíblico — Desafio da Palavra
+# Quiz Bíblico
 
-Aplicação interativa para testar conhecimentos sobre o **Antigo e o Novo Testamento**. Desenvolvida com HTML, CSS e JavaScript puro, com suporte a instalação como Progressive Web App (PWA).
+Aplicação web de perguntas e respostas para testar conhecimentos sobre a Bíblia. O jogador pode escolher entre **Antigo Testamento** e **Novo Testamento**, responder às questões e acumular pontos ao longo das rodadas.
 
 <p align="center">
-  <a href="https://francisc79.github.io/QUIZ-/"><strong>▶ JOGAR ONLINE</strong></a>
+  <a href="https://francisc79.github.io/QUIZ-/"><strong>▶ ACESSAR O QUIZ ONLINE</strong></a>
 </p>
+
+## Sobre o projeto
+
+O Quiz Bíblico foi desenvolvido como uma aplicação leve, com tecnologias web fundamentais. As perguntas ficam organizadas em um arquivo JSON separado da lógica do jogo, facilitando a manutenção e a ampliação do conteúdo.
+
+O banco atual contém **300 perguntas**:
+- 150 perguntas do Antigo Testamento.
+- 150 perguntas do Novo Testamento.
 
 ## Funcionalidades
 
-- Dois modos de jogo: Antigo Testamento e Novo Testamento.
-- Banco com **300 perguntas** (150 por testamento).
-- Rodadas de até 10 questões, sem repetir perguntas na mesma partida.
-- Pontuação de 10 pontos por resposta correta.
-- Feedback imediato com indicação da alternativa correta.
-- Resumo por rodada e resultado final com aproveitamento.
-- Efeitos sonoros e música de fundo.
-- Layout responsivo para celular, tablet e desktop.
-- PWA com cache dos arquivos essenciais para acesso offline após a instalação.
+- Escolha entre os modos Antigo Testamento e Novo Testamento.
+- Identificação do participante por nome.
+- Perguntas com quatro alternativas.
+- Indicação visual da resposta correta e da resposta selecionada incorretamente.
+- Pontuação acumulada durante a partida.
+- Rodadas com 10 perguntas.
+- Resumo da pontuação ao final de cada rodada.
+- Opção para continuar para a próxima rodada ou encerrar a partida.
+- Opção para iniciar uma nova partida.
+- Música de fundo e efeitos sonoros para respostas corretas e incorretas.
+- Layout adaptado para uso em dispositivos móveis.
+- Manifesto PWA e Service Worker para suporte à instalação como aplicativo.
 
-## Tecnologias
+## Tecnologias utilizadas
 
-| Tecnologia | Aplicação |
+| Tecnologia | Finalidade |
 | --- | --- |
-| HTML5 | Estrutura semântica e acessível |
-| CSS3 | Layout responsivo, animações e identidade visual |
-| JavaScript ES6+ | Lógica do quiz, pontuação e manipulação do DOM |
-| JSON | Armazenamento das perguntas |
-| Service Worker | Cache e experiência offline |
-| Web App Manifest | Instalação como aplicativo |
+| HTML5 | Estrutura da aplicação e componentes da interface |
+| CSS3 | Estilização, cores, organização dos elementos e responsividade |
+| JavaScript | Controle das perguntas, respostas, pontuação e navegação entre rodadas |
+| JSON | Armazenamento e organização das perguntas |
+| Web Audio / HTML Audio | Reprodução de música e efeitos sonoros |
+| PWA | Manifesto de instalação e Service Worker |
+
+## Como jogar
+
+1. Acesse o [Quiz Bíblico](https://francisc79.github.io/QUIZ-/).
+2. Informe o nome do participante.
+3. Escolha Antigo Testamento ou Novo Testamento.
+4. Leia a pergunta e selecione uma das quatro alternativas.
+5. Confira o feedback visual e sonoro.
+6. Cada resposta correta acrescenta 10 pontos.
+7. Ao concluir as 10 perguntas da rodada, escolha continuar ou encerrar.
+8. Ao finalizar, confira sua pontuação e, se desejar, inicie uma nova partida.
 
 ## Executar localmente
 
-1. Clone o repositório.
-2. Abra a pasta no Visual Studio Code.
-3. Inicie um servidor local, como Live Server.
-4. Acesse o endereço local fornecido pelo servidor.
+É possível executar o projeto sem instalar frameworks ou dependências.
 
-O Service Worker funciona em HTTPS ou localhost. Para testar a instalação PWA, utilize um navegador compatível.
+1. Faça o clone do repositório:
 
-## Estrutura do projeto
+   ```bash
+   git clone https://github.com/francisc79/QUIZ-.git
+   ```
+
+2. Abra a pasta do projeto no Visual Studio Code.
+3. Inicie um servidor local, por exemplo, usando a extensão Live Server.
+4. Abra o endereço local apresentado pelo servidor.
+
+> O uso de um servidor local (localhost) é recomendado para testar o carregamento do JSON e os recursos de PWA. O Service Worker requer HTTPS ou localhost.
+
+## Estrutura de arquivos
 
 ```text
 QUIZ-/
-├── img/              # Ícones e imagens
-├── sound/            # Música e efeitos sonoros
-├── index.html        # Estrutura da aplicação
-├── style.css         # Estilos e responsividade
-├── script.js         # Lógica do quiz
-├── questions.json    # Banco de 300 perguntas
-├── manifest.json     # Configuração PWA
-└── sw.js              # Cache offline
+├── img/
+│   ├── biblia.png
+│   ├── icon.png
+│   └── justica.png
+├── sound/
+│   ├── amazing-grace-instrumental-145357.mp3
+│   ├── correct-156911.mp3
+│   └── error-08-206492.mp3
+├── index.html
+├── style.css
+├── script.js
+├── questions.json
+├── manifest.json
+└── sw.js
 ```
 
-## Regras do jogo
+## Banco de perguntas
 
-- Escolha o testamento que deseja estudar.
-- Informe seu nome.
-- Cada rodada apresenta até 10 perguntas.
-- Cada acerto soma 10 pontos.
-- Ao final da rodada, você pode continuar ou encerrar a jornada.
-- O resultado apresenta a pontuação e o percentual de aproveitamento.
+O arquivo `questions.json` armazena os conjuntos de questões separados pelas propriedades `antigo` e `novo`. Cada questão contém:
+- `question`: enunciado.
+- `options`: lista com quatro alternativas.
+- `answer`: índice da alternativa correta, começando em zero.
 
-## Créditos e observações
+Exemplo de estrutura:
 
-Projeto independente com finalidade educativa. As perguntas são organizadas por tema bíblico e podem ser ampliadas ou revisadas no arquivo `questions.json`.
+```json
+{
+  "antigo": [
+    {
+      "question": "Exemplo de pergunta?",
+      "options": ["Alternativa A", "Alternativa B", "Alternativa C", "Alternativa D"],
+      "answer": 0
+    }
+  ],
+  "novo": []
+}
+```
+
+## Instalação como aplicativo
+
+O projeto inclui `manifest.json` e `sw.js`, utilizados pelo navegador para oferecer recursos de Progressive Web App (PWA). Em navegadores compatíveis, o usuário pode adicionar o quiz à tela inicial.
+
+## Melhorias futuras
+
+- Adicionar níveis de dificuldade.
+- Criar histórico local de partidas e pontuações.
+- Permitir filtrar perguntas por livro ou assunto.
+- Ampliar o banco de perguntas com revisão das referências bíblicas.
+
+## Créditos
+
+Projeto independente e educativo, desenvolvido para estudo e prática de desenvolvimento web.
 
 ---
 
-Desenvolvido por **Francisco Antônio** · Projeto de portfólio ADS
+Desenvolvido por **Francisco Antônio**.
