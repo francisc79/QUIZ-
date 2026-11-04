@@ -1,57 +1,41 @@
-// NOME DA VERSÃO (MUDE AQUI PARA ATUALIZAR O APP)
-const CACHE_NAME = 'quiz-biblico-v1';
-
-// Arquivos que serão salvos no celular do usuário
-const urlsToCache = [
+const CACHE_NAME = 'quiz-biblico-v2';
+const APP_SHELL = [
   './',
   './index.html',
   './style.css',
   './script.js',
   './questions.json',
   './manifest.json',
-  './img/logo.png',
-  './img/icone-antigo.png', // Verifique se o nome é esse mesmo
-  './img/icone-novo.png',   // Verifique se o nome é esse mesmo
-  './audio/music.mp3',
-  './audio/correct.mp3',
-  './audio/wrong.mp3'
+  './img/icon.png',
+  './img/biblia.png',
+  './img/justica.png',
+  './sound/amazing-grace-instrumental-145357.mp3',
+  './sound/correct-156911.mp3',
+  './sound/error-08-206492.mp3'
 ];
 
-// 1. INSTALAÇÃO (Baixa os arquivos)
-self.addEventListener('install', (event) => {
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('Arquivos em cache salvos com sucesso!');
-        return cache.addAll(urlsToCache);
-      })
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))))
+      .then(() => self.clients.claim())
   );
 });
 
-// 2. ATIVAÇÃO (Limpa versões antigas do cache para atualizar)
-self.addEventListener('activate', (event) => {
-  const cacheWhitelist = [CACHE_NAME];
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            // Apaga caches antigos (Update automático)
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-});
-
-// 3. INTERCEPTAÇÃO (Serve arquivos offline ou busca online)
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET' || new URL(event.request.url).origin !== self.location.origin) return;
   event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Se tiver no cache, usa o cache. Se não, busca na rede.
-        return response || fetch(event.request);
-      })
+    caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {
+      if (response && response.ok) {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+      }
+      return response;
+    }))
   );
 });
