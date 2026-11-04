@@ -1,1 +1,179 @@
-:root{color-scheme:dark;--bg:#0c1420;--panel:#142033;--panel2:#19283d;--line:rgba(192,169,116,.2);--text:#f5f1e8;--muted:#a1adbd;--gold:#d9b66e;--gold2:#f0d69b;--blue:#7fb5d9;--green:#72d5a2;--red:#f08b8b;--radius:22px}*{box-sizing:border-box;margin:0;padding:0}html{min-height:100%;background:var(--bg)}body{min-height:100vh;overflow-x:hidden;background:radial-gradient(ellipse at 50% -20%,#263b54 0,transparent 55%),linear-gradient(145deg,#0b1320,#111d2c);color:var(--text);font-family:'DM Sans',Arial,sans-serif;padding:0 22px 24px}.background-glow{position:fixed;pointer-events:none;border-radius:50%;filter:blur(100px);opacity:.12;z-index:0}.glow-one{width:390px;height:390px;background:#d9b66e;top:12%;left:-260px}.glow-two{width:420px;height:420px;background:#3d83b4;right:-270px;bottom:-70px}.app-shell{position:relative;z-index:1;width:min(1040px,100%);margin:auto}.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}.brand-icon{width:39px;height:39px;display:grid;place-items:center;border:1px solid #d9b66e77;border-radius:50%;color:var(--gold2);font-size:22px}.brand strong,.brand small{display:block}.brand strong{font:800 15px 'DM Sans',sans-serif;letter-spacing:2px}.brand small{font-size:8px;color:var(--gold);letter-spacing:2.4px;margin-top:4px}.topbar-right{display:flex;align-items:center;gap:9px;color:#aeb9c8;font-size:9px;font-weight:800;letter-spacing:1.6px}.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}.hero{min-height:245px;display:flex;align-items:center;justify-content:space-between;padding:38px 7%;position:relative;overflow:hidden}.eyebrow{font-size:9px;letter-spacing:2.7px;font-weight:800;color:var(--gold);margin-bottom:11px}.hero h1{font:800 clamp(35px,5.5vw,57px)/1.03 'Playfair Display',Georgia,serif;letter-spacing:-1.2px}.hero h1 span{color:var(--gold2)}.hero-copy{color:#aeb9c8;max-width:500px;font-size:13px;line-height:1.75;margin-top:14px}.hero-art{width:210px;height:180px;position:relative;display:grid;place-items:center;flex-shrink:0}.hero-art img{width:125px;height:125px;object-fit:contain;filter:drop-shadow(0 10px 35px #d9b66e55);position:relative;z-index:1}.hero-orbit{position:absolute;width:155px;height:155px;border:1px solid #d9b66e50;border-radius:50%;box-shadow:0 0 40px #d9b66e18,inset 0 0 40px #d9b66e10}.hero-orbit:before,.hero-orbit:after{content:'✦';position:absolute;color:var(--gold);font-size:17px}.hero-orbit:before{top:15px;right:13px}.hero-orbit:after{bottom:18px;left:8px}.game-card{background:linear-gradient(145deg,rgba(23,37,57,.97),rgba(15,25,40,.98));border:1px solid #c5a86c30;border-radius:var(--radius);padding:clamp(20px,4vw,38px);box-shadow:0 28px 80px #0006;min-height:430px}.game-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:23px}.game-heading .eyebrow{font-size:8px;margin-bottom:5px}.game-heading h2{font:700 25px 'Playfair Display',Georgia,serif;letter-spacing:.4px}.game-heading h2 span{color:var(--gold)}.quiet-button,.text-button{background:transparent;border:1px solid #536178;border-radius:9px;color:#b9c4d2;padding:9px 13px;font-size:9px;font-weight:800;letter-spacing:1px;cursor:pointer;transition:.2s}.quiet-button:hover,.text-button:hover{border-color:var(--gold);color:var(--text)}.player-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 17px;background:#0d1827;border:1px solid var(--line);border-radius:14px;margin-bottom:22px}.player-block{display:flex;align-items:center;gap:11px}.player-avatar{width:38px;height:38px;border-radius:12px;background:#d9b66e1c;border:1px solid #d9b66e65;display:grid;place-items:center;color:var(--gold2);font-size:19px}.player-block small,.score-block>small{display:block;color:#91a0b4;font-size:8px;letter-spacing:1.5px;font-weight:800}.player-block strong{display:block;font-size:13px;margin-top:3px}.score-block{text-align:right}.score-block>strong{display:flex;align-items:baseline;justify-content:flex-end;gap:6px;color:var(--gold2);font:800 25px 'Playfair Display',serif;margin-top:1px}.score-block>strong small{font:800 8px 'DM Sans',sans-serif;letter-spacing:1px;color:#a8b4c5}.progress-meta{display:flex;justify-content:space-between;align-items:center;color:#9eacbe;font-size:8px;font-weight:800;letter-spacing:1.4px;margin-bottom:8px}.progress-meta strong{color:var(--gold2);font-size:11px}.progress-track{height:7px;background:#26364a;border-radius:20px;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#b68b48,#f0d69b);border-radius:20px;transition:width .35s ease}.question-area{padding:27px 5px 20px;text-align:center}.question-number{font-size:8px;letter-spacing:2px;color:var(--gold);font-weight:800;margin-bottom:11px}.question-area h2{font:700 clamp(19px,3vw,25px)/1.35 'Playfair Display',Georgia,serif;max-width:720px;margin:auto;min-height:64px}.options-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;max-width:780px;margin:0 auto}.option-btn{display:flex;align-items:center;gap:12px;text-align:left;min-height:61px;padding:13px 15px;border:1px solid #3a4a60;border-radius:12px;background:linear-gradient(130deg,#1b2b40,#142237);color:#e8edf4;font:600 12px/1.5 'DM Sans',sans-serif;cursor:pointer;transition:transform .18s,border-color .18s,background .18s}.option-letter{flex-shrink:0;width:29px;height:29px;border-radius:9px;display:grid;place-items:center;background:#26384f;color:var(--gold2);font-size:10px;font-weight:800}.option-btn:hover:not(:disabled){transform:translateY(-2px);border-color:var(--gold);background:#23344a}.option-btn:focus-visible,.quiet-button:focus-visible,.primary-button:focus-visible,.text-button:focus-visible{outline:3px solid #7fb5d9;outline-offset:3px}.option-btn:disabled{cursor:default;opacity:1}.option-btn.correct{border-color:#55c891;background:#16392f;color:#d9ffeb}.option-btn.correct .option-letter{background:#235d47;color:#a9f2ca}.option-btn.wrong{border-color:#d77b7b;background:#3b252b;color:#ffe5e5}.option-btn.wrong .option-letter{background:#693a42;color:#ffd1d1}.answer-feedback{min-height:26px;text-align:center;font-size:11px;font-weight:700;padding-top:12px;color:var(--muted)}.answer-feedback.good{color:var(--green)}.answer-feedback.bad{color:var(--red)}.game-footer{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:15px;margin-top:12px;color:#8392a7;font-size:9px}.site-footer{display:flex;justify-content:space-between;padding:18px 3px;color:#64748b;font-size:8px;font-weight:800;letter-spacing:1.4px}.screen-overlay{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:20px;background:#050b14eF;backdrop-filter:blur(13px)}.welcome-card,.result-card{width:min(465px,100%);padding:34px clamp(22px,5vw,38px) 28px;text-align:center;border:1px solid #d9b66e44;border-radius:22px;background:linear-gradient(150deg,#1b2c43,#111c2d);box-shadow:0 25px 80px #0009;position:relative;overflow:hidden}.welcome-card:before,.result-card:before{content:'';position:absolute;top:0;left:15%;right:15%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}.brand-mark{width:61px;height:61px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;border:1px solid #d9b66e66;background:#d9b66e16}.brand-mark img{width:42px;height:42px;object-fit:contain}.welcome-card h1{font:800 42px 'Playfair Display',Georgia,serif}.welcome-card h1 span{color:var(--gold2)}.welcome-copy{font-size:11px;line-height:1.7;color:#aeb9c8;margin:10px 0 22px}.field-label,.choose-label{display:block;text-align:left;font-size:8px;font-weight:800;letter-spacing:1.5px;color:#b5c0ce;margin:12px 0 7px}.welcome-card input{width:100%;padding:13px 14px;background:#0c1726;border:1px solid #46566c;border-radius:9px;color:#fff;font:500 12px 'DM Sans',sans-serif;outline:none;user-select:text}.welcome-card input:focus{border-color:var(--gold);box-shadow:0 0 0 3px #d9b66e1c}.choose-label{margin-top:21px}.testament-options{display:grid;gap:10px}.testament-card{width:100%;display:flex;align-items:center;gap:12px;padding:13px;border:1px solid #536178;border-radius:12px;background:#142238;color:var(--text);text-align:left;cursor:pointer;transition:.2s}.testament-card:hover{transform:translateY(-2px);border-color:var(--gold)}.testament-icon{width:42px;height:42px;border-radius:10px;background:#d9b66e18;display:grid;place-items:center;flex-shrink:0}.testament-icon img{width:29px;height:29px;object-fit:contain}.testament-text{flex:1}.testament-text strong,.testament-text small{display:block}.testament-text strong{font-size:12px}.testament-text small{font-size:9px;color:#9eacbe;margin-top:4px}.card-arrow{font-size:20px;color:var(--gold)}.old-testament:hover{border-color:#d6a56b}.new-testament:hover{border-color:#7fb5d9}.welcome-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;margin-top:19px;color:#8492a7;font-size:8px;letter-spacing:.5px}.result-card{width:min(410px,100%)}.result-symbol{width:54px;height:54px;display:grid;place-items:center;border-radius:50%;margin:0 auto 14px;background:#d9b66e18;border:1px solid #d9b66e66;color:var(--gold2);font-size:25px}.result-card h2{font:700 28px 'Playfair Display',serif}.result-description{font-size:13px;color:#b9c4d2;line-height:1.6;margin:10px 0 14px}.round-details{padding:13px;border-radius:11px;background:#0d1827;border:1px solid var(--line);font-size:11px;line-height:1.8;color:#b8c4d2;margin:13px 0}.primary-button{width:100%;margin-top:17px;padding:14px 17px;border:0;border-radius:9px;background:linear-gradient(100deg,#b98d4d,#f0d69b);color:#241b0e;font-size:10px;font-weight:900;letter-spacing:1.2px;cursor:pointer;transition:filter .2s,transform .2s}.primary-button:hover{filter:brightness(1.08);transform:translateY(-2px)}.primary-button span{float:right;font-size:16px;line-height:10px}.text-button{width:100%;margin-top:10px;padding:12px;border-color:transparent}.final-score-text{font-size:13px;line-height:1.9;color:#b9c4d2;margin:15px 0}.final-score-text strong{font:800 27px 'Playfair Display',serif;color:var(--gold2)}.final-score-text .result-highlight{color:var(--green);font-weight:800}@media(max-width:650px){body{padding:0 12px 17px}.topbar{height:66px}.topbar-right{font-size:7px;letter-spacing:.8px}.brand strong{font-size:13px}.hero{min-height:205px;padding:29px 4%}.hero h1{font-size:38px}.hero-copy{font-size:11px;max-width:330px}.hero-art{width:110px;height:130px;opacity:.6;margin-right:-25px}.hero-art img{width:88px;height:88px}.hero-orbit{width:110px;height:110px}.game-card{padding:19px 14px}.game-heading h2{font-size:21px}.player-bar{padding:11px 12px}.question-area{padding:22px 2px 15px}.question-area h2{font-size:19px;min-height:75px}.options-grid{grid-template-columns:1fr;gap:8px}.option-btn{min-height:55px;padding:11px 12px}.game-footer{font-size:8px}.site-footer{font-size:7px;letter-spacing:.7px}.welcome-card,.result-card{padding:28px 20px 23px}.welcome-card h1{font-size:37px}}@media(max-width:380px){.hero h1{font-size:33px}.hero-art{width:82px;margin-right:-20px}.game-footer{flex-direction:column;align-items:center}.topbar-right{font-size:0}.topbar-right .live-dot{width:8px;height:8px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    
+    /* Impede selecionar texto (Sensação de App) */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    /* Remove destaque azul ao clicar no celular */
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    
+    /* Permite rolagem mas esconde a barra */
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    /* Espaço extra em baixo para nada ficar cortado no celular */
+    padding-bottom: 50px;
+}
+
+/* ESCONDER BARRA DE ROLAGEM */
+body::-webkit-scrollbar {
+    display: none;
+}
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+/* --- TELAS DE MENU (OVERLAY) --- */
+.overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 100;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    width: 90%; max-width: 400px;
+}
+
+.box h1 { color: #2c3e50; margin-bottom: 10px; }
+.box input { padding: 10px; width: 100%; margin: 15px 0; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
+
+.btn-start {
+    background: #4a90e2; color: white; border: none;
+    padding: 12px 24px; font-size: 1.1rem; border-radius: 50px;
+    cursor: pointer; width: 100%; transition: transform 0.2s;
+}
+.btn-start:hover { transform: scale(1.05); background: #357abd; }
+
+/* --- JOGO --- */
+header {
+    width: 100%; max-width: 600px;
+    display: flex; justify-content: space-between;
+    padding: 20px; color: white; font-weight: bold; font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.quiz-container {
+    background: white;
+    width: 95%; max-width: 600px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex; flex-direction: column; gap: 20px;
+}
+
+.progress-bar { width: 100%; height: 10px; background: #eee; border-radius: 5px; overflow: hidden; }
+.progress-fill { height: 100%; background: #4a90e2; width: 0%; transition: width 0.5s; }
+
+.question-box h2 { text-align: center; color: #2c3e50; font-size: 1.3rem; min-height: 60px; }
+
+.options-grid { display: flex; flex-direction: column; gap: 10px; }
+
+.option-btn {
+    background: #f8f9fa; border: 2px solid #e9ecef;
+    padding: 15px; border-radius: 10px;
+    text-align: left; font-size: 1rem; cursor: pointer;
+    transition: all 0.2s; color: #444;
+}
+
+.option-btn:hover { background: #e2e6ea; }
+
+/* Feedback de Acerto/Erro */
+.option-btn.correct { background: #d4edda; border-color: #28a745; color: #155724; }
+.option-btn.wrong { background: #f8d7da; border-color: #dc3545; color: #721c24; }
+/* Bloqueia cliques após responder */
+.no-click { pointer-events: none; }
+
+.question-counter { text-align: center; color: #888; font-size: 0.9rem; margin-top: 10px; }
+
+/* Container para os botões ficarem um em cima do outro com espaço */
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Estilo Base do Botão */
+.btn-start {
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.2s, filter 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.btn-start:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* Cores Específicas */
+.old-testament {
+    background: #8e44ad; /* Roxo ou Marrom (#d35400) fica legal */
+    background: linear-gradient(to right, #8e44ad, #9b59b6);
+}
+
+.new-testament {
+    background: #2980b9; /* Azul */
+    background: linear-gradient(to right, #2980b9, #3498db);
+}
+/* 1. Atualize a classe do botão para alinhar os itens */
+.btn-start {
+    /* Habilita o alinhamento flexível */
+    display: flex;
+    align-items: center;       /* Centraliza verticalmente */
+    justify-content: center;   /* Centraliza horizontalmente */
+    gap: 15px;                 /* Espaço entre a imagem e o texto */
+    
+    /* Mantém o estilo anterior que você já tinha */
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s, filter 0.2s;
+}
+
+/* 2. Nova classe para controlar o tamanho das imagens */
+.btn-icon-img {
+    width: 32px;  /* Força a largura para ficar pequena */
+    height: 32px; /* Força a altura para ficar quadrada */
+    object-fit: contain; /* Garante que a imagem não fique esticada ou distorcida */
+    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.3)); /* Uma sombra leve no ícone para destaque */
+}
+
+/* Efeito hover (já deve ter, mas garante que funciona) */
+.btn-start:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
